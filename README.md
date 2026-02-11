@@ -1,6 +1,5 @@
 # ⚓ MarinaFlow - Sistema Gestione Marina
 
-![MarinaFlow](https://marinaflow.vercel.app)
 
 **MarinaFlow** è una piattaforma web moderna per la gestione digitale di porti turistici.  
 Offre un'interfaccia intuitiva per visualizzare yacht disponibili, gestire prenotazioni e monitorare statistiche in tempo reale.
@@ -85,3 +84,7 @@ GitHub - Repository e versionamento
 
 💙 "Gestisci il tuo porto con eleganza."
 — MarinaFlow Team
+⭐ Se ti piace il progetto, lascia una stella su GitHub!
+https://img.shields.io/github/stars/iacreatorcar/marinaflow?style=social
+
+
