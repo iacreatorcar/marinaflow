@@ -16,8 +16,99 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: #1e293b;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
             min-height: 100vh;
+        }
+
+        /* INTRO PAGE - Ancora blu */
+        .intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #0b2b3b, #1a4a5f);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .intro.hidden {
+            transform: translateY(-100%);
+        }
+
+        .intro-container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        .intro .anchor {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .intro h1 {
+            font-size: 3.5em;
+            margin: 20px 0;
+            color: #fff;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin: 10px 0;
+        }
+
+        .intro .credits {
+            margin-top: 40px;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
+        .enter-btn {
+            margin-top: 30px;
+            padding: 12px 40px;
+            background: #14b8a6;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .enter-btn:hover {
+            background: #0f766e;
+            transform: scale(1.05);
+            border-color: white;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* MAIN APP - Dashboard */
+        .main-app {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .main-app.visible {
+            opacity: 1;
         }
 
         /* Navbar */
@@ -309,100 +400,115 @@
             .section h3 {
                 font-size: 1.5rem;
             }
+            
+            .intro h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="logo">⚓ MarinaFlow</h1>
-            <div class="nav-links">
-                <a href="#yachts" class="nav-link">Yacht</a>
-                <a href="#bookings" class="nav-link">Prenotazioni</a>
-                <a href="#dashboard" class="nav-link">Dashboard</a>
-            </div>
+    <!-- INTRO PAGE - Ancora blu -->
+    <div id="intro" class="intro">
+        <div class="intro-container">
+            <div class="anchor">⚓</div>
+            <h1>MarinaFlow</h1>
+            <p>Sistema Gestione Marina</p>
+            <p class="credits">by Carmine D'Alise</p>
+            <button id="enterBtn" class="enter-btn">Entra nel porto →</button>
         </div>
-    </nav>
+    </div>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Gestisci il tuo porto con eleganza</h2>
-                <p>Sistema completo di gestione per yacht, prenotazioni e servizi marini</p>
-            </div>
-        </section>
-
-        <section id="yachts" class="section">
-            <div class="container">
-                <h3>⛵ Yacht Disponibili</h3>
-                <div class="yacht-grid" id="yacht-list">
-                    <!-- Caricamento... -->
+    <!-- MAIN APP - Dashboard -->
+    <div id="mainApp" class="main-app">
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">⚓ MarinaFlow</h1>
+                <div class="nav-links">
+                    <a href="#yachts" class="nav-link">Yacht</a>
+                    <a href="#bookings" class="nav-link">Prenotazioni</a>
+                    <a href="#dashboard" class="nav-link">Dashboard</a>
                 </div>
             </div>
-        </section>
+        </nav>
 
-        <section id="bookings" class="section">
-            <div class="container">
-                <h3>📅 Nuova Prenotazione</h3>
-                <form id="booking-form" class="booking-form">
-                    <div class="form-group">
-                        <label for="yacht">Yacht:</label>
-                        <select id="yacht" required>
-                            <option value="">Seleziona uno yacht</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="customer">Nome Cliente:</label>
-                        <input type="text" id="customer" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="start-date">Data Inizio:</label>
-                            <input type="date" id="start-date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="end-date">Data Fine:</label>
-                            <input type="date" id="end-date" required>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn-primary">Crea Prenotazione</button>
-                </form>
-                <div id="booking-message" class="message"></div>
-            </div>
-        </section>
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Gestisci il tuo porto con eleganza</h2>
+                    <p>Sistema completo di gestione per yacht, prenotazioni e servizi marini</p>
+                </div>
+            </section>
 
-        <section id="dashboard" class="section">
-            <div class="container">
-                <h3>📊 Dashboard</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h4>Yacht Totali</h4>
-                        <p id="total-yachts">6</p>
-                    </div>
-                    <div class="stat-card">
-                        <h4>Prenotazioni Oggi</h4>
-                        <p id="bookings-today">3</p>
-                    </div>
-                    <div class="stat-card">
-                        <h4>API Status</h4>
-                        <p id="api-status">✅ Online</p>
+            <section id="yachts" class="section">
+                <div class="container">
+                    <h3>⛵ Yacht Disponibili</h3>
+                    <div class="yacht-grid" id="yacht-list">
+                        <!-- Yacht verranno inseriti qui -->
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2026 MarinaFlow - Creato da <strong>Carmine D'Alise</strong> · Privacy Strong by Design</p>
-            <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Sviluppo e architettura software · Tutti i diritti riservati</p>
-        </div>
-    </footer>
+            <section id="bookings" class="section">
+                <div class="container">
+                    <h3>📅 Nuova Prenotazione</h3>
+                    <form id="booking-form" class="booking-form">
+                        <div class="form-group">
+                            <label for="yacht">Yacht:</label>
+                            <select id="yacht" required>
+                                <option value="">Seleziona uno yacht</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer">Nome Cliente:</label>
+                            <input type="text" id="customer" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="start-date">Data Inizio:</label>
+                                <input type="date" id="start-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="end-date">Data Fine:</label>
+                                <input type="date" id="end-date" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Crea Prenotazione</button>
+                    </form>
+                    <div id="booking-message" class="message"></div>
+                </div>
+            </section>
+
+            <section id="dashboard" class="section">
+                <div class="container">
+                    <h3>📊 Dashboard</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4>Yacht Totali</h4>
+                            <p id="total-yachts">6</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Prenotazioni Oggi</h4>
+                            <p id="bookings-today">3</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>API Status</h4>
+                            <p id="api-status" style="color: #0f766e;">✅ Online</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>© 2026 MarinaFlow - Creato da <strong>Carmine D'Alise</strong> · Privacy Strong by Design</p>
+                <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Sviluppo e architettura software · Tutti i diritti riservati</p>
+            </div>
+        </footer>
+    </div>
 
     <script>
-        // Configurazione
-        const API_URL = 'http://localhost:8000/api';
-        
         // Dati di esempio
         const yachts = [
             { id: 1, name: 'Serenity', type: 'Sailing Yacht', length: 15 },
@@ -413,23 +519,39 @@
             { id: 6, name: 'Adventure', type: 'Catamaran', length: 20 }
         ];
 
-        // Inizializzazione
-        document.addEventListener('DOMContentLoaded', () => {
-            // Mostra yacht
+        // Gestione INTRO
+        document.addEventListener('DOMContentLoaded', function() {
+            const intro = document.getElementById('intro');
+            const mainApp = document.getElementById('mainApp');
+            const enterBtn = document.getElementById('enterBtn');
+            
+            // Mostra main app subito (nascosta dall'opacità)
+            // Ma la intro è sopra
+            
+            // Popola i dati
             displayYachts();
-            
-            // Popola select
             updateYachtSelect();
-            
-            // Setup form
             setupBookingForm();
-            
-            // Imposta date
             setDefaultDates();
+            
+            // Evento pulsante ENTRA
+            enterBtn.addEventListener('click', function() {
+                intro.classList.add('hidden');
+                mainApp.classList.add('visible');
+                
+                // Smooth scroll alla dashboard
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            });
         });
 
         function displayYachts() {
             const yachtList = document.getElementById('yacht-list');
+            if (!yachtList) return;
             
             yachtList.innerHTML = yachts.map(yacht => `
                 <div class="yacht-card">
@@ -442,12 +564,16 @@
 
         function updateYachtSelect() {
             const select = document.getElementById('yacht');
+            if (!select) return;
+            
             select.innerHTML = '<option value="">Seleziona uno yacht</option>' +
                 yachts.map(yacht => `<option value="${yacht.id}">${yacht.name} (${yacht.type})</option>`).join('');
         }
 
         function setupBookingForm() {
             const form = document.getElementById('booking-form');
+            if (!form) return;
+            
             form.addEventListener('submit', handleBooking);
         }
 
@@ -457,23 +583,32 @@
             tomorrow.setDate(tomorrow.getDate() + 1);
             const tomorrowStr = tomorrow.toISOString().split('T')[0];
             
-            document.getElementById('start-date').value = today;
-            document.getElementById('end-date').value = tomorrowStr;
+            const startDate = document.getElementById('start-date');
+            const endDate = document.getElementById('end-date');
+            
+            if (startDate) {
+                startDate.value = today;
+            }
+            
+            if (endDate) {
+                endDate.value = tomorrowStr;
+            }
         }
 
         function handleBooking(event) {
             event.preventDefault();
             
             const messageDiv = document.getElementById('booking-message');
+            if (!messageDiv) return;
             
-            // Validazione
-            if (!document.getElementById('yacht').value) {
+            const yachtId = document.getElementById('yacht').value;
+            
+            if (!yachtId) {
                 messageDiv.className = 'message error';
                 messageDiv.textContent = '❌ Seleziona uno yacht';
                 return;
             }
             
-            // Successo
             messageDiv.className = 'message success';
             messageDiv.textContent = '✅ Prenotazione creata con successo!';
             
@@ -483,7 +618,9 @@
             
             // Aggiorna contatore
             const bookingsToday = document.getElementById('bookings-today');
-            bookingsToday.textContent = parseInt(bookingsToday.textContent) + 1;
+            if (bookingsToday) {
+                bookingsToday.textContent = parseInt(bookingsToday.textContent) + 1;
+            }
         }
     </script>
 </body>
