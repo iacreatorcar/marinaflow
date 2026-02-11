@@ -1,3 +1,3 @@
-from marinaflow.api import app
+from api import app
 
 handler = app
