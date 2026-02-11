@@ -15,7 +15,6 @@
 - [Backend API](#backend-api)
 - [Frontend](#frontend)
 - [Installazione](#installazione)
-- [Sviluppo](#sviluppo)
 - [Credits](#credits)
 - [Licenza](#licenza)
 
@@ -35,26 +34,62 @@ MarinaFlow è un sistema completo per la gestione di porti turistici che permett
 ---
 
 ## 🏗️ ARCHITETTURA
+┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+│ Browser │ ──> │ Frontend │ ──> │ Backend │
+│ (Vercel) │ <── │ (HTML/CSS) │ <── │ (FastAPI) │
+└─────────────┘ └─────────────┘ └─────────────┘
+│
+▼
+┌─────────────┐
+│ Database │
+│ (Docker) │
+└─────────────┘
 
-```mermaid
-graph TB
-    subgraph "Frontend (Vercel)"
-        A[HTML/CSS/JS] --> B[Browser]
-    end
-    
-    subgraph "Backend (FastAPI)"
-        C[API Routes] --> D[Core Logic]
-        D --> E[Database Models]
-    end
-    
-    subgraph "Database (Docker)"
-        F[(PostgreSQL)]
-    end
-    
-    B <--> C
-    E <--> F
-    
-    style A fill:#f9f,stroke:#333
-    style C fill:#bbf,stroke:#333
-    style F fill:#bfb,stroke:#333
 
+---
+
+## 🔧 BACKEND API
+
+| Metodo | Endpoint | Descrizione |
+|--------|---------|-------------|
+| GET | `/` | Homepage API |
+| GET | `/api/health` | Health check server |
+| GET | `/api/hello/{name}` | Saluto personalizzato |
+| GET | `/api/yachts` | Lista yacht disponibili |
+| POST | `/api/bookings` | Crea nuova prenotazione |
+| GET | `/api/docs` | Documentazione Swagger |
+| GET | `/api/redoc` | Documentazione ReDoc |
+
+---
+
+## 🎨 FRONTEND
+
+### Caratteristiche
+
+- ✅ Design professionale con palette marina
+- ✅ Completamente responsive (mobile/tablet/desktop)
+- ✅ Griglia yacht dinamica con card animate
+- ✅ Form prenotazioni con validazione
+- ✅ Dashboard con statistiche in tempo reale
+- ✅ Feedback visivi (successo/errore/caricamento)
+
+### Tecnologie
+
+- **HTML5** semantico
+- **CSS3** con Flexbox/Grid
+- **JavaScript** vanilla (nessun framework)
+- **Fetch API** per comunicazione con backend
+
+👨‍💻 CREDITS
+Carmine D'Alise
+
+🐙 GitHub: @iacreatorcar
+
+📧 Email: iacreatorcar@gmail.com
+
+📍 Italia
+
+📜 LICENZA
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+
+<p align="center"> <strong>MarinaFlow</strong> · Sviluppato con 🐍⚡ da <strong>Carmine D'Alise</strong><br> © 2026 · Tutti i diritti riservati · Privacy Strong by Design </p><p align="center"> <a href="https://github.com/iacreatorcar/marinaflow">GitHub</a> · <a href="#-marinaflow---sistema-gestione-marina">Torna su</a> </p> ```
