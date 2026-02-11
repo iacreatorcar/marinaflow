@@ -46,9 +46,12 @@ Il progetto è attualmente live e accessibile pubblicamente all'indirizzo:
 
 📸 Anteprima del progetto
 Intro Page	Dashboard
-⚓ Ancora blu con effetto float	📊 Yacht, prenotazioni e statistiche
+⚓ Ancora blu con effetto float	
+
+📊 Yacht, prenotazioni e statistiche
 Pulsante "Entra nel porto"	Card interattive con hover effect
 Sfondo gradiente blu	Form di prenotazione validato
+
 🧑‍💻 Autore
 Carmine D'Alise
 
