@@ -1,17 +1,12 @@
-﻿# ⚓ MarinaFlow - Sistema Gestione Marina
+﻿# MarinaFlow - Sistema Gestione Marina
 
-**Backend FastAPI + Frontend HTML/CSS/JS per la gestione di porti turistici**
-
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-[![Python](https://img.shields.io/badge/Python-3.14%2B-blue)](https://python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.128.7-009688)](https://fastapi.tiangolo.com)
+Backend FastAPI + Frontend HTML/CSS/JS per la gestione di porti turistici
 
 ---
 
 ## 📋 INDICE
 
 - [Panoramica](#panoramica)
-- [Architettura](#architettura)
 - [Backend API](#backend-api)
 - [Frontend](#frontend)
 - [Installazione](#installazione)
@@ -33,10 +28,6 @@ MarinaFlow è un sistema per la gestione di porti turistici.
 
 ---
 
-## 🏗️ ARCHITETTURA
-
----
-
 ## 🔧 BACKEND API
 
 | Metodo | Endpoint | Descrizione |
@@ -44,8 +35,8 @@ MarinaFlow è un sistema per la gestione di porti turistici.
 | GET | `/` | Homepage |
 | GET | `/api/health` | Health check |
 | GET | `/api/yachts` | Lista yacht |
-| POST | `/api/bookings` | Prenotazioni |
-| GET | `/api/docs` | Documentazione |
+| POST | `/api/bookings` | Crea prenotazione |
+| GET | `/api/docs` | Documentazione Swagger |
 
 ---
 
@@ -54,26 +45,26 @@ MarinaFlow è un sistema per la gestione di porti turistici.
 - HTML5, CSS3, JavaScript
 - Design responsive
 - Card yacht interattive
-- Form prenotazioni
+- Form prenotazioni con validazione
 
 ---
 
 ## 🚀 INSTALLAZIONE
 
-marinaflow/
-├── src/              # Backend Python
-├── frontend/         # HTML/CSS/JS
-├── requirements.txt
-└── README.md
+```bash
+git clone https://github.com/iacreatorcar/marinaflow.git
+cd marinaflow
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python -m src.marinaflow.main
 
 👨‍💻 CREDITS
 Carmine D'Alise
 
 GitHub: @iacreatorcar
 
-Italia
-
 📜 LICENZA
 CC BY-NC-ND 4.0
 
-<p align="center"> Sviluppato con 🐍⚡ da <strong>Carmine D'Alise</strong><br> © 2026 </p> ```
+<p align="center"> Sviluppato con Python e FastAPI da Carmine D'Alise<br> © 2026 </p> ```
