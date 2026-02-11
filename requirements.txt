@@ -1,4 +1,2 @@
-cat > requirements.txt << 'EOF'
 fastapi==0.115.11
 uvicorn[standard]==0.34.0
-EOF
