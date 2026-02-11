@@ -58,33 +58,3 @@ Carmine D'Alise
 
 📧 Contatta
 
-📄 Licenza
-Questo progetto è distribuito con licenza CC BY-NC-ND 4.0
-(Creative Commons - Attribuzione - Non commerciale - Non opere derivate)
-
-https://img.shields.io/badge/License-CC%2520BY--NC--ND%25204.0-lightgrey.svg
-
-🗺️ Roadmap (Prossimi aggiornamenti)
-Backend FastAPI per dati dinamici
-
-Database PostgreSQL per yacht e prenotazioni
-
-Autenticazione utenti
-
-Gestione tariffe e disponibilità
-
-API REST documentata
-
-🙏 Riconoscimenti
-Inter Font - Google Fonts
-
-Vercel - Hosting gratuito
-
-GitHub - Repository e versionamento
-
-💙 "Gestisci il tuo porto con eleganza."
-— MarinaFlow Team
-⭐ Se ti piace il progetto, lascia una stella su GitHub!
-https://img.shields.io/github/stars/iacreatorcar/marinaflow?style=social
-
-
